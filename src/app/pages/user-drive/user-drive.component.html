@@ -1,0 +1,82 @@
+<app-navbar></app-navbar>
+<div class="container-fluid shadow d-flex flex-column mt-3">
+  <div class="d-flex justify-content-between px-sm-2 px-0 mb-3">
+    <button class="drive-button">Мой диск</button>
+    <form enctype="multipart/form-data" class="upload-form d-flex align-items-center">
+      <input id="inputFile" type="file" multiple (change)="onFilesSelected($event)" hidden>
+      <label for="inputFile" class="drive-feature-button">Загрузить изображения</label>
+      <label for="inputFile" class="upload-button me-3">
+        <svg id="uploadIcon" height="20px" width="20px" fill="#75FFA6FF" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path d="m158.7,136c11.8,10.6 24.8,3.3 28.9-1l48-51.6v297.2c0,11.3 9.1,20.4 20.4,20.4 11.3,0 20.4-9.1 20.4-20.4v-297.3l48,51.6c7.7,8.3 20.6,8.7 28.9,1 8.3-7.7 8.7-20.6 1-28.9l-83.4-89.6c-3.9-4.1-9.3-6.5-14.9-6.5-5.7,0-11.1,2.4-14.9,6.5l-83.4,89.6c-7.7,8.4-7.4,21.5 1,29z"/>
+        <path d="M480.6,335c-11.3,0-20.4,9.1-20.4,20.4v104.8H51.8V355.4c0-11.3-9.1-20.4-20.4-20.4c-11.3,0-20.4,9.1-20.4,20.4v125.2    c0,11.3,9.1,20.4,20.4,20.4h449.2c11.3,0,20.4-9.1,20.4-20.4V355.4C501,344.1,491.9,335,480.6,335z"/>
+      </svg>
+      </label>
+    </form>
+  </div>
+</div>
+<div class="container-fluid h-100 row-scrollable pt-3 px-sm-4">
+  <div *ngIf="files === null || files.length === 0; else userImages" class="d-flex h-100 flex-column align-items-center justify-content-center">
+    <app-drop-file (uploadedImages)="addUploadedImages($event)"></app-drop-file>
+  </div>
+  <ng-template #userImages>
+    <div class="row">
+      <div @fileAnimation class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let file of files; let i = index">
+        <div class="d-flex flex-column">
+          <img alt="none" class="img-fluid img-border" src="{{apiUrl + file.url}}">
+          <div class="d-flex align-items-center justify-content-between card-border p-3">
+            <p class="card-img-name">{{file.name}}</p>
+            <div class="d-flex">
+              <button (click)="saveFile(i)" class="card-button me-2">
+                <svg id="load" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" height="20px" width="20px" viewBox="0 0 490 490">
+                  <path d="M245,0c-9.5,0-17.2,7.7-17.2,17.2v331.2L169,289.6c-6.7-6.7-17.6-6.7-24.3,0s-6.7,17.6,0,24.3l88.1,88.1
+                  c3.3,3.3,7.7,5,12.1,5c4.4,0,8.8-1.7,12.1-5l88.1-88.1c6.7-6.7,6.7-17.6,0-24.3c-6.7-6.7-17.6-6.7-24.3,0L262,348.4V17.1
+                  C262.1,7.6,254.5,0,245,0z"/>
+                  <path d="M462.1,472.9v-99.7c0-9.5-7.7-17.2-17.2-17.2s-17.2,7.7-17.2,17.2v82.6H62.2v-82.6c0-9.5-7.7-17.2-17.1-17.2
+                  s-17.2,7.7-17.2,17.2v99.7c0,9.5,7.7,17.1,17.2,17.1h399.8C454.4,490,462.1,482.4,462.1,472.9z"/>
+                </svg>
+              </button>
+              <button class="card-button" (click)="selectedImage = i" data-toggle="modal" data-target="#modalDialog">
+                <svg id="trash" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" height="20px" width="20px" viewBox="0 0 92 92">
+                  <path id="XMLID_1348_" d="M78.4,30.4l-3.1,57.8c-0.1,2.1-1.9,3.8-4,3.8H20.7c-2.1,0-3.9-1.7-4-3.8l-3.1-57.8
+                  c-0.1-2.2,1.6-4.1,3.8-4.2c2.2-0.1,4.1,1.6,4.2,3.8l2.9,54h43.1l2.9-54c0.1-2.2,2-3.9,4.2-3.8C76.8,26.3,78.5,28.2,78.4,30.4z
+                   M89,17c0,2.2-1.8,4-4,4H7c-2.2,0-4-1.8-4-4s1.8-4,4-4h22V4c0-1.9,1.3-3,3.2-3h27.6C61.7,1,63,2.1,63,4v9h22C87.2,13,89,14.8,89,17z
+                   M36,13h20V8H36V13z M37.7,78C37.7,78,37.7,78,37.7,78c2,0,3.5-1.9,3.5-3.8l-1-43.2c0-1.9-1.6-3.5-3.6-3.5c-1.9,0-3.5,1.6-3.4,3.6
+                  l1,43.3C34.2,76.3,35.8,78,37.7,78z M54.2,78c1.9,0,3.5-1.6,3.5-3.5l1-43.2c0-1.9-1.5-3.6-3.4-3.6c-2,0-3.5,1.5-3.6,3.4l-1,43.2
+                  C50.6,76.3,52.2,78,54.2,78C54.1,78,54.1,78,54.2,78z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
+<div class="notification-container" *ngIf="isShowingNotification" @notification>
+  <div class="d-flex align-items-center">
+    <svg id="success" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+         viewBox="0 0 50 50" fill="red" height="40px" width="40px">
+      <circle style="fill:none;" cx="25" cy="25" r="25"/>
+      <polyline class="polyline" points="
+	38,15 22,33 12,25 "/>
+    </svg>
+    <p class="notification-info ms-3">{{notificationMessage}}</p>
+  </div>
+</div>
+<div class="modal fade" id="modalDialog" tabindex="-1" role="dialog" aria-labelledby="modalDialogTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content modal-background">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLongTitle">Удалить изображение?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body d-flex justify-content-center">
+        <button type="button" (click)="deleteImage()" class="modal-button" data-dismiss="modal" aria-label="Close">Удалить</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+

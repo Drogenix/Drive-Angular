@@ -1,0 +1,32 @@
+.small-text
+{
+  color: #7b94a1;
+  font-size: 14px;
+  display: none;
+}
+.register_error
+{
+  text-align: center;
+  font-size: 15px;
+  margin: 10px 0;
+}
+.login_input
+{
+  width: 100%;
+}
+.login_container
+{
+  min-width: 340px;
+}
+.login_container form
+{
+  width: 240px;
+}
+.content_container
+{
+  max-width: 360px;
+}
+.input-container:focus-within .small-text
+{
+  display: block;
+}

@@ -1,0 +1,169 @@
+.navbar_exit
+{
+  position: relative;
+  font-size: 17px;
+  border-radius: 4px;
+  color: rgb(167, 220, 255);
+  letter-spacing: 1px;
+  transition: 400ms ease-out;
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer;
+}
+.navbar_exit:hover
+{
+  color: rgb(106, 210, 255);
+}
+.navbar-container
+{
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 2;
+}
+.app-nav
+{
+  z-index: 5;
+  height: 60px;
+}
+.nav-menu-button
+{
+  border: 0;
+  background: transparent;
+  cursor:pointer;
+  display: none;
+}
+#Capa_1
+{
+  filter: drop-shadow(0px 0px 8px rgba(106, 210, 255, 0.8));
+}
+.navbar-dropdown-menu
+{
+  display: flex;
+  align-items: center;
+}
+.brend_title
+{
+  font-size: clamp(22px, 5vw, 26px);
+  margin: 0;
+  animation: blur 4s ease-in infinite;
+  display: block;
+  color: #6AD2FFFF;
+}
+.nav-expand-md
+{
+  display: flex;
+}
+.navbar-button
+{
+  letter-spacing: 2px;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 8px 35px;
+  cursor: pointer;
+}
+.login
+{
+  border: 1px solid transparent;
+  box-shadow: 0 0 4px transparent;
+  color: #6AD2FFCC;
+  transition: 400ms ease;
+}
+.register
+{
+  color: #ffffff;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: 400ms ease;
+}
+.register:hover
+{
+  color: #95ffa9;
+  border: 1px solid rgba(149, 255, 169, 0.8);
+  background: #001d41;
+}
+.login:hover
+{
+  border: 1px solid #6AD2FFCC;
+  box-shadow: 0 0 4px rgba(106, 210, 255, 0.6);
+}
+.navbar_user
+{
+  color: #ffffff;
+  font-size: 16px;
+  padding-bottom: 4px;
+  margin: 0;
+}
+.show
+{
+  display: flex;
+  flex-basis: 100%;
+  flex-shrink: 1;
+}
+@keyframes blur {
+  0%
+  {
+    text-shadow: 0 0 4px transparent;
+  }
+  50%
+  {
+    text-shadow: 0 0 4px rgba(130, 255, 199, 0.5);
+
+  }
+  100%
+  {
+    text-shadow: 0 0 4px transparent;
+
+  }
+}
+@media screen and (max-width: 767px) {
+ .navbar-dropdown-menu
+ {
+   flex-basis: 100%;
+   left:0;
+   top:61px;
+   flex-direction: column;
+   justify-content: flex-end;
+   align-items: end;
+   width: 100%;
+   position: absolute;
+   background: #000e23;
+   padding: 1rem 1.5rem!important;
+   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+   z-index: 2;
+ }
+  .navbar-button
+  {
+    padding:0;
+    border:none;
+    margin: 0;
+    background: none;
+    box-shadow: none;
+  }
+  .collapsed
+  {
+    display: none;
+  }
+  .nav-menu-button
+  {
+    display: flex;
+  }
+  .register:hover
+  {
+    color: #95ffa9;
+    border: none;
+    background: none;
+  }
+  .login:hover
+  {
+    color: rgb(122, 210, 253);
+    border: none;
+    background: none;
+  box-shadow: none;
+  }
+}
+@media screen and (max-width: 575px) {
+  .brend_title
+  {
+    display: none;
+  }
+}

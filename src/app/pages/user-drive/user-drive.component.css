@@ -1,0 +1,227 @@
+.drive_header
+{
+  border-bottom: 1px solid rgba(211, 211, 211, 0.49);
+}
+.drive-button
+{
+  font-size: 20px;
+  border: 0;
+  font-weight: bold;
+  color: #ffffff;
+  background: transparent;
+}
+.row-scrollable
+{
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.row-scrollable::-webkit-scrollbar
+{
+  width: 10px;
+}
+.row-scrollable::-webkit-scrollbar-track:hover
+{
+  background: rgba(210, 229, 255, 0.08);
+  border: 1px solid rgba(210, 229, 255, 0.2);
+}
+.row-scrollable::-webkit-scrollbar-thumb
+{
+  border: 3px solid transparent;
+  background: rgba(210, 229, 255, 0.15);
+}
+.row-scrollable::-webkit-scrollbar-track
+{
+  background: transparent;
+}
+.modal-dialog
+{
+  max-width: 400px;
+  margin: 0 auto;
+}
+.card-img-name
+{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 150px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: rgb(255, 255, 255);
+  margin: 0;
+}
+.card-border
+{
+  border-left: 1px solid rgba(210, 229, 255, 0.5);
+  border-right: 1px solid rgba(210, 229, 255, 0.5);
+  border-bottom: 1px solid rgba(210, 229, 255, 0.5);
+  background: rgb(0, 30, 50);
+  border-radius: 0 0 6px 6px;
+}
+.img-border
+{
+  border-left: 1px solid rgba(210, 229, 255, 0.5);
+  border-right: 1px solid rgba(210, 229, 255, 0.5);
+  border-top: 1px solid rgba(210, 229, 255, 0.5);
+  border-radius: 6px 6px 0 0;
+}
+.img-fluid
+{
+  height: 180px;
+  max-width: 100%;
+}
+.card-button
+{
+  background: transparent;
+  border: 0;
+  transition: 400ms;
+}
+.card-button svg
+{
+  fill: rgba(255, 255, 255, 0.6);
+}
+#load:hover
+{
+  filter:drop-shadow(0 0 8px rgb(117, 255, 166));
+  fill: rgb(117, 255, 166);
+}
+#trash:hover
+{
+  filter:drop-shadow(0 0 8px rgb(255, 106, 106));
+  fill: rgb(255, 106, 106);
+}
+.card-button:hover
+{
+  bottom: 4px;
+}
+.modal-background
+{
+  background: #000E23;
+  border: 1px solid rgba(210, 229, 255, 0.5);
+}
+.modal-header
+{
+  border: 0;
+}
+.modal-title
+{
+  color: #6acfff;
+  text-align: center;
+}
+.modal-button
+{
+  color: white;
+  background: #007ac0;
+  padding: 5px 24px;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 0 10px transparent;
+  transition: 400ms;
+}
+.modal-button:hover
+{
+  box-shadow: 0 0 10px rgb(28, 136, 197);
+}
+.close
+{
+  background: transparent;
+  border: 0;
+  color: white;
+  font-size: 25px;
+  position: relative;
+  bottom: 2px;
+}
+.close:hover
+{
+  color: #1ea1d2;
+}
+.notification-container
+{
+  position: absolute;
+  border-radius: 5px;
+  background: #ffffff1a;
+  border: 1px solid rgba(106, 210, 255, 0.5);
+  width: 100%;
+  padding: 3px 5px;
+  max-width: 280px;
+  left: 20px;
+  top:90%;
+  color: #6AD2FF;
+}
+.notification-info
+{
+  margin: 0 10px 0;
+  font-size: 16px;
+  box-sizing: content-box;
+}
+.polyline
+{
+  fill:none;
+  stroke:#75FFA6FF;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-miterlimit:10;
+}
+.empty-list__icon
+{
+  fill: #64d58c;
+  height: 75px;
+  width:clamp(60px, 10vw, 75px);
+  filter:drop-shadow(0px 0px 8px rgba(100, 213, 140, 0.7));
+}
+.empty-list__info
+{
+  color: #def5ff;
+  text-align: center;
+  max-width: 500px;
+  font-size: clamp(15px, 2.5vw, 17px);
+}
+.drive-feature-button
+{
+  position: relative;
+  background: transparent;
+  color: rgb(149, 255, 169);
+  border:none;
+  transition: 400ms;
+  letter-spacing: 1px;
+  bottom:0;
+  cursor: pointer;
+}
+.drive-feature-button:hover
+{
+  bottom:4px;
+}
+.col-12
+{
+  max-width: 360px;
+}
+.upload-button
+{
+  display: none;
+  cursor: pointer;
+}
+.upload-form input
+{
+  min-height: 20px;
+  min-width: 20px;
+}
+@media screen and (max-width: 575px){
+  .col-12
+  {
+    max-width: 320px;
+  }
+  .upload-button
+  {
+    display: flex;
+  }
+  .upload-form .drive-feature-button
+  {
+    display: none;
+  }
+  .row
+  {
+    flex-direction: column;
+    align-items: center;
+  }
+}

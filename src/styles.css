@@ -1,1 +1,147 @@
 /* You can add global styles to this file, and also import other style files */
+body, html
+{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(135deg,
+  #000E23,
+  #000E23);
+  margin: 0;
+  padding: 0;
+  font-family: 'IBM Plex Sans', sans-serif !important;
+  letter-spacing: 2px;
+  overflow: hidden;
+}
+app-main
+{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+}
+app-login
+{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+app-root
+{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+app-user-drive
+{
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+app-drop-file
+{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+app-register
+{
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.bg-dark-blue
+{
+  background: #000E23;
+}
+.fg-light-blue
+{
+  color: #6AD2FF;
+}
+.fg-light-green
+{
+  color: #83ffb5;
+}
+.container-fluid
+{
+  max-width: 1320px;
+}
+.login_container
+{
+  border-radius: 4px;
+  border: 1px solid rgba(210, 229, 255, 0.5);
+  min-width: 320px;
+  padding: 25px 15px;
+  background: #000a1c;
+}
+.login_label
+{
+  color: white;
+  font-size: 16px;
+}
+.login_link
+{
+  font-size: 14px;
+  text-decoration: none;
+  position: relative;
+  left: 0;
+  transition: 300ms;
+}
+.login_link:hover
+{
+  left: 4px;
+  color: #83ffb5;
+}
+.login_input
+{
+  background: #000E23;
+  border: 1px solid rgba(210, 229, 255, 0.5);
+  border-radius: 4px;
+  padding: 3px 15px;
+  text-align: center;
+  color: white;
+}
+.content_container
+{
+  max-width: 480px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login_button
+{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  height: 36px;
+  width: 120px;
+  margin: 0 auto;
+  font-size: 17px;
+  border-radius: 4px;
+  color: rgb(128, 217, 255);
+  letter-spacing: 1px;
+  transition: 400ms ease-out;
+  background: transparent;
+  cursor: pointer;
+}
+
+.login_footer
+{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 13px;
+  color: rgb(162, 186, 197);
+  border-radius: 1px;
+  line-height: 25px;
+}
+@media screen and (max-width: 400px){
+  .login_container
+  {
+    min-width: 270px;
+  }
+}

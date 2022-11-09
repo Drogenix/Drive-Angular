@@ -1,0 +1,26 @@
+.loader {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: block;
+  position: relative;
+  background: linear-gradient(0deg, rgba(106, 210, 255, 0.5) 33%, #6ad2ff 100%);
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #000a1c;
+}
+@keyframes rotation {
+  0% { transform: rotate(0deg) }
+  100% { transform: rotate(360deg)}
+}
