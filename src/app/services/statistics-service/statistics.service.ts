@@ -13,7 +13,7 @@ export class StatisticsService {
 
   constructor(private http: HttpClient)
   {
-    this.apiUrl = environment.apiUrl + 'api/statistics-service';
+    this.apiUrl = environment.apiUrl + 'api/Statistics';
   }
 
   getServiceStats() : Observable<Statistics>

@@ -108,14 +108,12 @@ export class UserDriveComponent implements OnInit {
     }
   }
 
-  deleteImage() {
-     const fileId = this.files[this.selectedImage].id;
+  deleteImage(index:number) {
+     const fileId = this.files[index].id;
 
      this.userDriveService.deleteImage(fileId).subscribe(() => {
 
-     this.files.splice(this.selectedImage,1);
-
-     this.selectedImage = -1;
+     this.files.splice(index,1);
 
      this.notificationMessage = "Файл удалён";
 
